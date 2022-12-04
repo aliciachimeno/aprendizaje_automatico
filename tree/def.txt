@@ -1,6 +1,4 @@
 
-
-
 # 13. Árboles de decisión (CART= Classification and regression tree)
 
 Es un método basado en arboles para el aprendizaje automático supervisado. 
