@@ -1,0 +1,37 @@
+
+
+
+# 13. Árboles de decisión (CART= Classification and regression tree)
+
+Es un método basado en arboles para el aprendizaje automático supervisado. 
+Ventajas: considera las interacciones, fácil usar. Desventajas: no muy bueno
+
+- Clasificación: var resultado: categórica, se usa: identificar la clase.
+- Regresión: var resultado: contínua, se usa: predecir el valor.
+
+Los modelos CART segmentan el espacio predictor en K nodos terminales no superpuestos (hojas). Se definen los nodos a través de un proceso de top-down greedy llamado división binaria recursiva. (Nodo raíz, ---, nodo hoja)
+La mejor división del espacio de predicción es el punto de corte entre variable predicadora y el mínimo de la función de costo.
+Función de costo:
+	- RSS (reg)
+	- Índice de Gini (class)
+	- Entropía (class)
+
+OBS: para evitar el over-fitting -> se poda el árbol ( minimizando el error de predicción de validación cruzada ). Hiperparámetro: profundidad del árbol.
+
+--????
+
+13.1 Árboles de clasificación. 
+
+Ex:
+Data: n observaciones : #train + #test.
+	#train: #S+#N
+Variables predictoras: factor y numéricas. Var resultado: categórica. (S/N,caso/control)
+
+Nodo raíz (clase predicha usando moda) si #S>#N -> clase predicha: #S ( error predicho :#N de train obs ) tasa de éxito (precisión) del #S/#train ,  tasa de error del #N/#train .
+
+Obs: las cajas muestran la clasificación del nodo (moda)
+
+CP: complexity parameter: penanlty of the model for having too many splits (too small=overfitting, too large=small tree). The best cp is when maximizes CV accuracy. 
+
+rel error: tasa error relativo al nodo raíz. Err rel (nodo n=?) = Err. abs (nodo n=?) / Err. abs (raiz)
+!!!!error abs = tasa error. 
